@@ -1,657 +1,1597 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مسار هب | شريك استراتيجي سعودي للتجارة الإلكترونية</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --green:#0F3D2E;
-    --green-soft:#1B5A45;
-    --maroon:#5A1126;
-    --maroon-soft:#7A1B36;
-    --sand:#F7F4EE;
-    --white:#FFFFFF;
-    --ink:#16241F;
-    --line:rgba(15,61,46,0.12);
-    --radius:18px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Tajawal', sans-serif;
-    background:var(--sand);
-    color:var(--ink);
-    line-height:1.75;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{font-family:'Almarai', sans-serif; font-weight:800;}
-  a{text-decoration:none; color:inherit;}
-  ul{list-style:none;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:13px; letter-spacing:.5px; color:var(--maroon);
-    font-weight:700; margin-bottom:14px;
-  }
-  .eyebrow::before{content:""; width:24px; height:2px; background:var(--maroon); display:inline-block;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسار هب | شريك استراتيجي سعودي للتجارة الإلكترونية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --green: #0F3D2E;
+      --green-soft: #1B5A45;
+      --maroon: #5A1126;
+      --maroon-soft: #7A1B36;
+      --sand: #F7F4EE;
+      --white: #FFFFFF;
+      --ink: #16241F;
+      --line: rgba(15, 61, 46, 0.12);
+      --radius: 18px;
+    }
 
-  /* ===== HEADER ===== */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(247,244,238,0.92); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 28px; flex-wrap:wrap; gap:10px;}
-  .logo img{height:62px; width:auto;}
-  .nav-links{display:flex; gap:34px; font-weight:700; font-size:15px;}
-  .nav-links a{position:relative; padding:6px 0;}
-  .nav-links a::after{content:""; position:absolute; bottom:0; right:0; width:0; height:2px; background:var(--maroon); transition:width .25s;}
-  .nav-links a:hover::after{width:100%;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:13px 26px; border-radius:999px; font-weight:700; font-size:14.5px;
-    transition:transform .2s, box-shadow .2s;
-    border:none; cursor:pointer;
-  }
-  .btn-maroon{background:var(--maroon); color:#fff;}
-  .btn-maroon:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(90,17,38,.35);}
-  .btn-outline{border:1.5px solid var(--green); color:var(--green); background:transparent;}
-  .btn-outline:hover{background:var(--green); color:#fff;}
-  .btn-ghost-light{border:1.5px solid rgba(255,255,255,.4); color:#fff; background:transparent;}
-  .btn-ghost-light:hover{background:rgba(255,255,255,.12);}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ===== HERO ===== */
-  .hero{
-    position:relative; background:var(--green); color:var(--sand);
-    padding:80px 0 60px; overflow:hidden;
-  }
-  .hero::before{
-    content:""; position:absolute; inset:0;
-    background:
-      radial-gradient(circle at 85% 15%, rgba(90,17,38,.30), transparent 45%),
-      radial-gradient(circle at 10% 95%, rgba(255,255,255,.06), transparent 50%);
-  }
-  .hero-grid{position:relative; display:grid; grid-template-columns:1.05fr 0.95fr; gap:50px; align-items:center;}
-  .hero h1{font-size:clamp(32px,4.2vw,50px); line-height:1.3; margin:14px 0 20px;}
-  .hero h1 span{color:#E8B4A6;}
-  .hero p{font-size:17px; color:#D7E2DB; max-width:520px; margin-bottom:32px;}
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
-  .hero-art{
-    position:relative; border-radius:var(--radius); overflow:hidden;
-    aspect-ratio:16/10; border:1px solid rgba(255,255,255,.12);
-  }
-  .hero-art img{width:100%; height:100%; object-fit:cover;}
-  .stats-row{
-    position:relative; display:grid; grid-template-columns:repeat(4,1fr);
-    gap:1px; background:rgba(255,255,255,.1); border-radius:var(--radius);
-    overflow:hidden; margin-top:54px;
-  }
-  .stat{background:var(--green-soft); padding:24px 16px; text-align:center;}
-  .stat b{display:block; font-family:'Almarai'; font-size:28px; color:#E8B4A6; margin-bottom:4px;}
-  .stat span{font-size:13px; color:#CFE0D6;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ===== ABOUT / TABS ===== */
-  section{padding:92px 0;}
-  .section-head{text-align:center; max-width:640px; margin:0 auto 50px;}
-  .section-head h2{font-size:clamp(26px,3vw,38px); margin-top:6px;}
-  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:54px; align-items:center;}
-  .about-art{border-radius:var(--radius); overflow:hidden; aspect-ratio:1/1; border:1px solid var(--line);}
-  .about-art img{width:100%; height:100%; object-fit:cover;}
-  .tabs{display:flex; gap:8px; margin-bottom:26px; border-bottom:1px solid var(--line); flex-wrap:wrap;}
-  .tab-btn{
-    background:none; border:none; cursor:pointer; font-family:'Tajawal'; font-weight:700;
-    font-size:15.5px; padding:12px 6px; color:#7E8C84; border-bottom:3px solid transparent;
-    transition:.2s;
-  }
-  .tab-btn.active{color:var(--ink); border-color:var(--maroon);}
-  .tab-panel{display:none;}
-  .tab-panel.active{display:block; animation:fade .35s ease;}
-  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
-  .tab-panel h3{font-size:21px; margin-bottom:10px;}
-  .tab-panel p{color:#3D4A43; margin-bottom:18px;}
-  .pill-list{display:flex; gap:10px; flex-wrap:wrap;}
-  .pill-list li{
-    background:var(--white); border:1px solid var(--line); padding:9px 18px;
-    border-radius:999px; font-size:14px; font-weight:700; color:var(--green-soft);
-  }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
 
-  /* mini banner strip for about/vision/goal images */
-  .vision-strip{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:60px;}
-  .vision-strip figure{border-radius:14px; overflow:hidden; aspect-ratio:4/3; border:1px solid var(--line); position:relative;}
-  .vision-strip img{width:100%; height:100%; object-fit:cover;}
-  .vision-strip figcaption{
-    position:absolute; bottom:0; right:0; left:0; padding:14px 16px;
-    background:linear-gradient(0deg, rgba(15,61,46,.85), transparent);
-    color:#fff; font-weight:700; font-size:14px;
-  }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Almarai', sans-serif;
+      font-weight: 800;
+    }
 
-  /* ===== SERVICES ===== */
-  .services{background:var(--white);}
-  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .scard{
-    background:var(--sand); border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden; display:flex; flex-direction:column;
-    transition:transform .25s, box-shadow .25s, border-color .25s;
-  }
-  .scard:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(15,61,46,.10); border-color:var(--maroon-soft);}
-  .scard .thumb{aspect-ratio:16/10; overflow:hidden;}
-  .scard .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .4s;}
-  .scard:hover .thumb img{transform:scale(1.06);}
-  .scard .body{padding:24px 22px; display:flex; flex-direction:column; gap:14px; flex:1;}
-  .scard h3{font-size:18px;}
-  .scard .blk{font-size:14px;}
-  .scard .blk b{display:block; color:var(--maroon); font-size:12.5px; letter-spacing:.3px; margin-bottom:4px;}
-  .scard .blk p{color:#4A564E;}
-  .scard .cta{
-    margin-top:auto; font-weight:700; font-size:14px; color:var(--green);
-    display:flex; align-items:center; gap:6px; padding-top:10px; border-top:1px solid var(--line);
-  }
-  .scard .cta::after{content:"←"; transition:transform .2s;}
-  .scard:hover .cta::after{transform:translateX(-4px);}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  /* ===== CTA BAND ===== */
-  .cta-band{
-    background:linear-gradient(120deg, var(--green), var(--maroon));
-    color:#fff; border-radius:24px; padding:54px 40px; text-align:center;
-    display:flex; flex-direction:column; align-items:center; gap:18px;
-  }
-  .cta-band h2{font-size:clamp(22px,2.6vw,30px); max-width:600px;}
-  .cta-band p{color:#EADFE0; max-width:520px;}
+    ul {
+      list-style: none;
+    }
 
-  /* ===== CONTACT ===== */
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:54px;}
-  .info-card{
-    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 24px; display:flex; gap:16px; align-items:flex-start; margin-bottom:16px;
-  }
-  .info-card .ic{
-    width:44px; height:44px; border-radius:12px; background:#EFE2E0;
-    display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--maroon);
-    font-size:18px;
-  }
-  .info-card h4{font-size:15.5px; margin-bottom:4px;}
-  .info-card p{font-size:14px; color:#4A564E;}
-  form{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:32px;}
-  .field{margin-bottom:18px;}
-  .field label{display:block; font-size:13.5px; font-weight:700; margin-bottom:7px; color:var(--green-soft);}
-  .field input, .field select, .field textarea{
-    width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:10px;
-    font-family:'Tajawal'; font-size:14.5px; background:var(--sand); color:var(--ink);
-  }
-  .field textarea{resize:vertical; min-height:100px;}
-  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--maroon); outline-offset:1px;}
-  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  form .btn{width:100%; justify-content:center; padding:15px;}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-  /* ===== FOOTER ===== */
-  footer{background:var(--green); color:#CFE0D6; padding:60px 0 26px;}
-  .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.10);}
-  .foot-logo img{height:54px; margin-bottom:14px; filter:brightness(0) invert(1);}
-  .foot-grid h4{color:#fff; font-size:16px; margin-bottom:18px;}
-  .foot-grid p{font-size:14px; max-width:340px;}
-  .foot-grid li{margin-bottom:11px; font-size:14px;}
-  .foot-grid li a:hover{color:#E8B4A6;}
-  .bottom-bar{display:flex; justify-content:space-between; align-items:center; padding-top:24px; font-size:13px; flex-wrap:wrap; gap:10px;}
-  .credit-text{text-align:center; padding-top:16px; border-top:1px solid rgba(255,255,255,.10); font-size:12px; color:#CFE0D6;}
-  .credit-text a{color:#E8B4A6; font-weight:700; transition:color .2s;}
-  .credit-text a:hover{color:#fff;}
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-  @media(max-width:900px){
-    .nav-links{display:none;}
-    .hero-grid{grid-template-columns:1fr;}
-    .stats-row{grid-template-columns:repeat(2,1fr);}
-    .about-grid{grid-template-columns:1fr;}
-    .vision-strip{grid-template-columns:1fr 1fr;}
-    .services-grid{grid-template-columns:1fr 1fr;}
-    .contact-grid{grid-template-columns:1fr;}
-    .foot-grid{grid-template-columns:1fr;}
-    section{padding:60px 0;}
-    .wrap{padding:0 20px;}
-    .nav{padding:12px 20px;}
-  }
-  
-  @media(max-width:768px){
-    .nav{flex-direction:column; gap:12px;}
-    .logo img{height:50px;}
-    .hero-ctas{gap:8px;}
-    .hero p{font-size:16px;}
-    .stats-row{grid-template-columns:repeat(2,1fr);}
-    .stat{padding:20px 12px;}
-    .stat b{font-size:24px;}
-    .stat span{font-size:12px;}
-    section{padding:50px 0;}
-    .services-grid{grid-template-columns:1fr;}
-    .vision-strip{grid-template-columns:1fr;}
-    .contact-grid{grid-template-columns:1fr;}
-  }
-  
-  @media(max-width:560px){
-    .wrap{padding:0 16px;}
-    .nav{padding:10px 16px;}
-    .nav-links{display:none;}
-    .logo img{height:48px;}
-    .btn{padding:11px 18px; font-size:13px;}
-    
-    .hero{padding:60px 0 40px;}
-    .hero-grid{gap:30px;}
-    .hero h1{font-size:clamp(24px,3.5vw,32px);}
-    .hero p{font-size:14px; margin-bottom:20px;}
-    .hero-ctas{gap:8px; flex-direction:column;}
-    .hero-ctas a{width:100%;}
-    .stats-row{grid-template-columns:1fr 1fr; gap:2px; margin-top:30px;}
-    .stat{padding:16px 10px;}
-    .stat b{font-size:20px;}
-    .stat span{font-size:11px;}
-    
-    section{padding:40px 0;}
-    .section-head{margin:0 auto 30px;}
-    .section-head h2{font-size:clamp(20px,2.5vw,26px);}
-    
-    .about-grid{gap:30px;}
-    .tabs{gap:6px; margin-bottom:18px;}
-    .tab-btn{font-size:13px; padding:10px 4px;}
-    .tab-panel h3{font-size:18px; margin-bottom:8px;}
-    .tab-panel p{font-size:13px; margin-bottom:14px;}
-    .pill-list{gap:6px;}
-    .pill-list li{padding:7px 14px; font-size:12px;}
-    .vision-strip{gap:12px; margin-top:40px;}
-    .vision-strip figcaption{padding:10px 12px; font-size:12px;}
-    
-    .services-grid{grid-template-columns:1fr; gap:18px;}
-    .scard .body{padding:16px 14px; gap:12px;}
-    .scard h3{font-size:16px;}
-    .scard .blk{font-size:13px;}
-    .scard .blk b{font-size:11.5px;}
-    .scard .cta{font-size:13px; padding-top:8px;}
-    
-    .cta-band{padding:36px 20px; gap:14px;}
-    .cta-band h2{font-size:clamp(18px,2.2vw,24px);}
-    .cta-band p{font-size:14px;}
-    
-    .contact-grid{gap:30px;}
-    .info-card{padding:16px 18px; gap:12px; margin-bottom:12px;}
-    .info-card .ic{width:40px; height:40px; font-size:16px;}
-    .info-card h4{font-size:14px;}
-    .info-card p{font-size:13px;}
-    form{padding:20px;}
-    .field{margin-bottom:14px;}
-    .field label{font-size:12px; margin-bottom:5px;}
-    .field input, .field select, .field textarea{padding:11px 12px; font-size:13px;}
-    .field textarea{min-height:80px;}
-    .field-row{grid-template-columns:1fr; gap:10px;}
-    form .btn{padding:13px;}
-    
-    footer{padding:40px 0 18px;}
-    .foot-grid{gap:30px; padding-bottom:30px;}
-    .foot-logo img{height:48px;}
-    .foot-grid h4{font-size:15px; margin-bottom:14px;}
-    .foot-grid p{font-size:13px;}
-    .foot-grid li{margin-bottom:8px; font-size:13px;}
-    .bottom-bar{flex-direction:column; justify-content:center; gap:8px; padding-top:18px; font-size:12px;}
-    .credit-text{padding-top:12px; border-top:1px solid rgba(255,255,255,.10); font-size:11px;}
-  }
-</style>
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      letter-spacing: .5px;
+      color: var(--maroon);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--maroon);
+      display: inline-block;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 244, 238, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo svg {
+      height: 62px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: var(--maroon);
+      transition: width .25s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14.5px;
+      transition: transform .2s, box-shadow .2s;
+      border: none;
+      cursor: pointer;
+      font-family: 'Tajawal';
+    }
+
+    .btn-maroon {
+      background: var(--maroon);
+      color: #fff;
+    }
+
+    .btn-maroon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(90, 17, 38, .35);
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-ghost-light {
+      border: 1.5px solid rgba(255, 255, 255, .4);
+      color: #fff;
+      background: transparent;
+    }
+
+    .btn-ghost-light:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: var(--green);
+      color: var(--sand);
+      padding: 80px 0 60px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(90, 17, 38, .30), transparent 45%),
+        radial-gradient(circle at 10% 95%, rgba(255, 255, 255, .06), transparent 50%);
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 4.2vw, 50px);
+      line-height: 1.3;
+      margin: 14px 0 20px;
+    }
+
+    .hero h1 span {
+      color: #E8B4A6;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #D7E2DB;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-art {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-art svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .stats-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 54px;
+    }
+
+    .stat {
+      background: var(--green-soft);
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .stat b {
+      display: block;
+      font-family: 'Almarai';
+      font-size: 28px;
+      color: #E8B4A6;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: #CFE0D6;
+    }
+
+    /* ===== ABOUT / TABS ===== */
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 50px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      margin-top: 6px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .about-art {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .about-art svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Tajawal';
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 12px 6px;
+      color: #7E8C84;
+      border-bottom: 3px solid transparent;
+      transition: .2s;
+    }
+
+    .tab-btn.active {
+      color: var(--ink);
+      border-color: var(--maroon);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: fade .35s ease;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .tab-panel h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .tab-panel p {
+      color: #3D4A43;
+      margin-bottom: 18px;
+    }
+
+    .pill-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill-list li {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .vision-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 60px;
+    }
+
+    .vision-strip figure {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--line);
+      position: relative;
+      background: var(--white);
+    }
+
+    .vision-strip svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .vision-strip figcaption {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 14px 16px;
+      background: linear-gradient(0deg, rgba(15, 61, 46, .85), transparent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .scard {
+      background: var(--sand);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    .scard:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 61, 46, .10);
+      border-color: var(--maroon-soft);
+    }
+
+    .scard .thumb {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--green-soft), var(--maroon-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3em;
+    }
+
+    .scard .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .scard:hover .thumb img {
+      transform: scale(1.06);
+    }
+
+    .scard .body {
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .scard h3 {
+      font-size: 18px;
+    }
+
+    .scard .blk {
+      font-size: 14px;
+    }
+
+    .scard .blk b {
+      display: block;
+      color: var(--maroon);
+      font-size: 12.5px;
+      letter-spacing: .3px;
+      margin-bottom: 4px;
+    }
+
+    .scard .blk p {
+      color: #4A564E;
+    }
+
+    .scard .cta {
+      margin-top: auto;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .scard .cta::after {
+      content: "←";
+      transition: transform .2s;
+    }
+
+    .scard:hover .cta::after {
+      transform: translateX(-4px);
+    }
+
+    /* ===== CTA BAND ===== */
+    .cta-band {
+      background: linear-gradient(120deg, var(--green), var(--maroon));
+      color: #fff;
+      border-radius: 24px;
+      padding: 54px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(22px, 2.6vw, 30px);
+      max-width: 600px;
+    }
+
+    .cta-band p {
+      color: #EADFE0;
+      max-width: 520px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .info-card .ic {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #EFE2E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--maroon);
+      font-size: 18px;
+    }
+
+    .info-card h4 {
+      font-size: 15.5px;
+      margin-bottom: 4px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      color: #4A564E;
+    }
+
+    .info-card a {
+      color: var(--green);
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .info-card a:hover {
+      color: var(--maroon);
+    }
+
+    form {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--green-soft);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-family: 'Tajawal';
+      font-size: 14.5px;
+      background: var(--sand);
+      color: var(--ink);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: 2px solid var(--maroon);
+      outline-offset: 1px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    form .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .success-message {
+      background: #E8F5E9;
+      color: #2E7D32;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--green);
+      color: #CFE0D6;
+      padding: 60px 0 26px;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .foot-logo svg {
+      height: 54px;
+      margin-bottom: 14px;
+    }
+
+    .foot-grid h4 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .foot-grid p {
+      font-size: 14px;
+      max-width: 340px;
+    }
+
+    .foot-grid li {
+      margin-bottom: 11px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .foot-grid li a:hover {
+      color: #E8B4A6;
+    }
+
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .credit-text {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      font-size: 12px;
+      color: #CFE0D6;
+    }
+
+    .credit-text a {
+      color: #E8B4A6;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .credit-text a:hover {
+      color: #fff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .wrap {
+        padding: 0 20px;
+      }
+
+      .nav {
+        padding: 12px 20px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .logo svg {
+        height: 50px;
+      }
+
+      .hero-ctas {
+        gap: 8px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat {
+        padding: 20px 12px;
+      }
+
+      .stat b {
+        font-size: 24px;
+      }
+
+      .stat span {
+        font-size: 12px;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      .nav {
+        padding: 10px 16px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo svg {
+        height: 48px;
+      }
+
+      .btn {
+        padding: 11px 18px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: clamp(24px, 3.5vw, 32px);
+      }
+
+      .hero p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .hero-ctas {
+        gap: 8px;
+        flex-direction: column;
+      }
+
+      .hero-ctas a {
+        width: 100%;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        margin-top: 30px;
+      }
+
+      .stat {
+        padding: 16px 10px;
+      }
+
+      .stat b {
+        font-size: 20px;
+      }
+
+      .stat span {
+        font-size: 11px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .section-head {
+        margin: 0 auto 30px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(20px, 2.5vw, 26px);
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .tabs {
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+
+      .tab-btn {
+        font-size: 13px;
+        padding: 10px 4px;
+      }
+
+      .tab-panel h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .tab-panel p {
+        font-size: 13px;
+        margin-bottom: 14px;
+      }
+
+      .pill-list {
+        gap: 6px;
+      }
+
+      .pill-list li {
+        padding: 7px 14px;
+        font-size: 12px;
+      }
+
+      .vision-strip {
+        gap: 12px;
+        margin-top: 40px;
+      }
+
+      .vision-strip figcaption {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .scard .body {
+        padding: 16px 14px;
+        gap: 12px;
+      }
+
+      .scard h3 {
+        font-size: 16px;
+      }
+
+      .scard .blk {
+        font-size: 13px;
+      }
+
+      .scard .blk b {
+        font-size: 11.5px;
+      }
+
+      .scard .cta {
+        font-size: 13px;
+        padding-top: 8px;
+      }
+
+      .cta-band {
+        padding: 36px 20px;
+        gap: 14px;
+      }
+
+      .cta-band h2 {
+        font-size: clamp(18px, 2.2vw, 24px);
+      }
+
+      .cta-band p {
+        font-size: 14px;
+      }
+
+      .contact-grid {
+        gap: 30px;
+      }
+
+      .info-card {
+        padding: 16px 18px;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .info-card .ic {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .info-card h4 {
+        font-size: 14px;
+      }
+
+      .info-card p {
+        font-size: 13px;
+      }
+
+      form {
+        padding: 20px;
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      .field label {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        padding: 11px 12px;
+        font-size: 13px;
+      }
+
+      .field textarea {
+        min-height: 80px;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      form .btn {
+        padding: 13px;
+      }
+
+      footer {
+        padding: 40px 0 18px;
+      }
+
+      .foot-grid {
+        gap: 30px;
+        padding-bottom: 30px;
+      }
+
+      .foot-logo svg {
+        height: 48px;
+      }
+
+      .foot-grid h4 {
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
+
+      .foot-grid p {
+        font-size: 13px;
+      }
+
+      .foot-grid li {
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+
+      .bottom-bar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 18px;
+        font-size: 12px;
+      }
+
+      .credit-text {
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, .10);
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="nav wrap">
-    <a class="logo" href="#home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4CAYAAADsEGyPAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nOzdvXUcV5qA4as9tNoRzfWWiIB02xIYwVYGxGagDLQbwT" alt="مسار هب"></a>
-    <nav class="nav-links">
-      <a href="#home">من نحن</a>
-      <a href="#about">أهدافنا</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
-    <button id="langToggle" class="btn btn-outline" type="button">EN</button>
-    <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">احجز استشارتك المجانية</a>
-  </div>
-</header>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="nav wrap">
+      <a class="logo" href="#home">
+        <svg width="50" height="62" viewBox="0 0 50 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="20" fill="#0F3D2E"/>
+          <path d="M25 5 L30 18 L45 18 L33 26 L38 39 L25 31 L12 39 L17 26 L5 18 L20 18 Z" fill="#E8B4A6"/>
+          <text x="50%" y="60" font-size="12" fill="#0F3D2E" text-anchor="middle" font-weight="bold">مسار هب</text>
+        </svg>
+      </a>
+      <nav class="nav-links">
+        <a href="#home">من نحن</a>
+        <a href="#about">أهدافنا</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+      <button id="langToggle" class="btn btn-outline" type="button">EN</button>
+      <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">
+        <i class="fab fa-whatsapp"></i> احجز استشارتك
+      </a>
+    </div>
+  </header>
 
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow" style="color:#E8B4A6; justify-content:flex-start"><span style="width:24px;height:2px;background:#E8B4A6;display:inline-block"></span>شريك استراتيجي سعودي</span>
-      <h1>نحول حلمك <span>لواقع ملموس</span> من فكرة إلى أرباح مستدامة</h1>
-      <p>مسار هب شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية، بفريق يفهم السوق السعودي ويساعدك على تحقيق أهدافك التجارية بكفاءة واحترافية.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-maroon" href="#services">اعرف خدماتنا</a>
-        <a class="btn btn-ghost-light" href="https://wa.me/966536065553" target="_blank">تواصل عبر واتساب</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <img src="data:image/jpeg;base64,/9j/4QCMRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAAAfAAAAcgEyAAIAAAAUAAAAkYdpAAQAAAABAAAAqAAAANQALcbAAAAn" alt="شراكة استراتيجية">
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="stats-row">
-      <div class="stat"><b>+30</b><span>متجراً تم إطلاقه</span></div>
-      <div class="stat"><b>70%</b><span>متوسط رفع التحويل</span></div>
-      <div class="stat"><b>8</b><span>خدمات متكاملة</span></div>
-      <div class="stat"><b>2030</b><span>رؤية نسعى لها</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" style="justify-content:center">أهدافنا</span>
-      <h2>رؤيتنا واستراتيجيتنا</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-art">
-        <img src="data:image/jpeg;base64,/9j/4QCMRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAAAfAAAAcgEyAAIAAAAUAAAAkYdpAAQAAAABAAAAqAAAANQALcbAAA" alt="أهدافنا">
-      </div>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
       <div>
-        <div class="tabs">
-          <button class="tab-btn active" onclick="openTab(event, 'vision')">الرؤية</button>
-          <button class="tab-btn" onclick="openTab(event, 'mission')">الرسالة</button>
-          <button class="tab-btn" onclick="openTab(event, 'values')">القيم</button>
+        <span class="eyebrow" style="color:#E8B4A6; justify-content:flex-start">
+          <span style="width:24px;height:2px;background:#E8B4A6;display:inline-block;margin-left:8px;"></span>
+          شريك استراتيجي سعودي
+        </span>
+        <h1>نحول حلمك <span>لواقع ملموس</span> من فكرة إلى أرباح مستدامة</h1>
+        <p>مسار هب شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية، بفريق يفهم السوق السعودي ويساعدك على تحقيق أحلامك التجارية بنجاح.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-maroon" href="#services">
+            <i class="fas fa-arrow-left"></i> اعرف خدماتنا
+          </a>
+          <a class="btn btn-ghost-light" href="https://wa.me/966536065553" target="_blank">
+            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+          </a>
         </div>
-        
-        <div id="vision" class="tab-panel active">
-          <h3>رؤيتنا الطموحة</h3>
-          <p>أن نصبح الشريك الأول والأكثر موثوقية للعاملين في مجال التجارة الإلكترونية في السوق السعودي والعربي، من خلال تقديم حلول متميزة وابتكارية تعزز النمو والاستدامة.</p>
-          <ul class="pill-list">
-            <li>نمو مستدام</li>
-            <li>ابتكار مستمر</li>
-            <li>شفافية كاملة</li>
-            <li>جودة عالية</li>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="250" fill="#E8B4A6"/>
+          <circle cx="100" cy="80" r="50" fill="#0F3D2E" opacity="0.3"/>
+          <circle cx="320" cy="180" r="60" fill="#5A1126" opacity="0.2"/>
+          <rect x="80" y="100" width="240" height="80" rx="15" fill="#FFFFFF" opacity="0.1"/>
+          <text x="200" y="145" font-size="24" fill="#0F3D2E" text-anchor="middle" font-weight="bold">مسار هب</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="wrap">
+      <div class="stats-row">
+        <div class="stat">
+          <b>+30</b>
+          <span>متجراً تم إطلاقه</span>
+        </div>
+        <div class="stat">
+          <b>70%</b>
+          <span>متوسط رفع التحويل</span>
+        </div>
+        <div class="stat">
+          <b>8</b>
+          <span>خدمات متكاملة</span>
+        </div>
+        <div class="stat">
+          <b>2030</b>
+          <span>رؤية نسعى لها</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center">أهدافنا</span>
+        <h2>رؤيتنا واستراتيجيتنا</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-art">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="400" fill="#1B5A45"/>
+            <circle cx="200" cy="200" r="100" fill="#E8B4A6" opacity="0.3"/>
+            <rect x="150" y="150" width="100" height="100" rx="20" fill="#0F3D2E" opacity="0.2"/>
+            <circle cx="100" cy="100" r="40" fill="#5A1126" opacity="0.2"/>
+            <circle cx="300" cy="300" r="50" fill="#E8B4A6" opacity="0.2"/>
+            <text x="200" y="210" font-size="28" fill="#FFFFFF" text-anchor="middle" font-weight="bold">رؤيتنا</text>
+          </svg>
+        </div>
+        <div>
+          <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'vision')">
+              <i class="fas fa-eye"></i> الرؤية
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'mission')">
+              <i class="fas fa-target"></i> الرسالة
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'values')">
+              <i class="fas fa-heart"></i> القيم
+            </button>
+          </div>
+
+          <div id="vision" class="tab-panel active">
+            <h3>رؤيتنا الطموحة</h3>
+            <p>أن نصبح الشريك الأول والأكثر موثوقية للعاملين في مجال التجارة الإلكترونية في السوق السعودي والعربي، مع التركيز على الابتكار والجودة والنمو المستدام.</p>
+            <ul class="pill-list">
+              <li><i class="fas fa-check-circle"></i> نمو مستدام</li>
+              <li><i class="fas fa-lightbulb"></i> ابتكار مستمر</li>
+              <li><i class="fas fa-handshake"></i> شفافية كاملة</li>
+              <li><i class="fas fa-star"></i> جودة عالية</li>
+            </ul>
+          </div>
+
+          <div id="mission" class="tab-panel">
+            <h3>رسالتنا</h3>
+            <p>تمكين رواد الأعمال والمتاجر الإلكترونية من خلال تقديم خدمات احترافية متكاملة تشمل التأسيس والتسويق والتطوير والإدارة، بكفاءة عالية وأسعار منافسة.</p>
+            <ul class="pill-list">
+              <li><i class="fas fa-rocket"></i> تمكين الرواد</li>
+              <li><i class="fas fa-briefcase"></i> خدمات شاملة</li>
+              <li><i class="fas fa-cogs"></i> كفاءة عالية</li>
+              <li><i class="fas fa-tag"></i> أسعار منافسة</li>
+            </ul>
+          </div>
+
+          <div id="values" class="tab-panel">
+            <h3>قيمنا الأساسية</h3>
+            <p>نؤمن بقيم العمل الجماعي والمسؤولية والابتكار والشفافية، ونعمل بجد لبناء علاقات قوية مع عملائنا بناءً على الثقة والاحترام المتبادل.</p>
+            <ul class="pill-list">
+              <li><i class="fas fa-users"></i> العمل الجماعي</li>
+              <li><i class="fas fa-shield-alt"></i> المسؤولية</li>
+              <li><i class="fas fa-brain"></i> الابتكار</li>
+              <li><i class="fas fa-book-open"></i> الشفافية</li>
+              <li><i class="fas fa-medal"></i> الثقة</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision Strip -->
+      <div class="vision-strip">
+        <figure>
+          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#0F3D2E"/>
+            <circle cx="200" cy="150" r="80" fill="#E8B4A6" opacity="0.3"/>
+            <text x="200" y="160" font-size="32" fill="#FFFFFF" text-anchor="middle" font-weight="bold">🎯</text>
+          </svg>
+          <figcaption>استهداف دقيق</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#5A1126"/>
+            <circle cx="200" cy="150" r="80" fill="#E8B4A6" opacity="0.3"/>
+            <text x="200" y="160" font-size="32" fill="#FFFFFF" text-anchor="middle" font-weight="bold">📈</text>
+          </svg>
+          <figcaption>نمو مستمر</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#1B5A45"/>
+            <circle cx="200" cy="150" r="80" fill="#E8B4A6" opacity="0.3"/>
+            <text x="200" y="160" font-size="32" fill="#FFFFFF" text-anchor="middle" font-weight="bold">✨</text>
+          </svg>
+          <figcaption>تميز واحترافية</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center">خدماتنا</span>
+        <h2>حلول متكاملة لمتجرك الإلكتروني</h2>
+      </div>
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="body">
+            <h3>تأسيس متجرك الإلكتروني</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>إنشاء متجر إلكتروني احترافي من الصفر مع كل الأدوات والميزات التي تحتاجها للبيع بفعالية.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>تصميم متجر احترافي، نظام دفع آمن، إدارة المنتجات، نظام فواتير ذكي.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="body">
+            <h3>التسويق الرقمي والسيو</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>استراتيجيات تسويق شاملة لزيادة مبيعاتك وتحسين ظهورك في محركات البحث.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>تحسين محركات البحث SEO، إعلانات جوجل وفيسبوك، تسويق المحتوى، إدارة السوشيال ميديا.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="body">
+            <h3>التطوير والصيانة المستمرة</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>تطوير مستمر وتحديثات دورية لمتجرك مع الحفاظ على الأداء الأمثل والأمان العالي.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>تطوير ميزات جديدة، إصلاح الأعطال، تحسين الأداء، نسخ احتياطية دورية، دعم فني 24/7.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="body">
+            <h3>التحليل والإحصائيات</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>تحليل شامل لأداء متجرك مع تقارير تفصيلية وتوصيات لتحسين المبيعات.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>تقارير شهرية مفصلة، تحليل سلوك العملاء، تتبع المبيعات، اقتراحات التحسين المستمر.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="body">
+            <h3>استشارات الأعمال</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>استشارات متخصصة لتطوير استراتيجيتك التجارية وزيادة ربحيتك في التجارة الإلكترونية.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>دراسة السوق، تحديد الفرص، استراتيجيات النمو، تطوير خطة تسويق شاملة، متابعة الأداء.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="body">
+            <h3>دعم العملاء المتخصص</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>فريق دعم متخصص وسريع الاستجابة لحل مشاكلك وأسئلتك بكفاءة واحترافية.</p>
+            </div>
+            <div class="blk">
+              <b>ما تحصل عليه</b>
+              <p>دعم 24/7 عبر واتساب والبريد، وقت استجابة سريع، حل فوري للمشاكل الفنية والإدارية.</p>
+            </div>
+            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND ===== -->
+  <section style="display: flex; align-items: center; justify-content: center; padding: 80px 28px;">
+    <div class="wrap" style="width: 100%;">
+      <div class="cta-band">
+        <h2>هل أنت مستعد لبدء رحلتك نحو النجاح التجاري؟</h2>
+        <p>تواصل معنا اليوم واحصل على استشارة مجانية من خبرائنا المتخصصين</p>
+        <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">
+          <i class="fab fa-whatsapp"></i> احجز استشارتك المجانية
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="justify-content:center">تواصل معنا</span>
+        <h2>ابقَ على اتصال دائم</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="info-card">
+            <div class="ic">📞</div>
+            <div>
+              <h4>رقم الجوال</h4>
+              <p><a href="tel:+966536065553">+966 53 606 5553</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic">💬</div>
+            <div>
+              <h4>واتساب</h4>
+              <p><a href="https://wa.me/966536065553" target="_blank">تواصل معنا عبر واتساب</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic">📧</div>
+            <div>
+              <h4>البريد الإلكتروني</h4>
+              <p><a href="mailto:info@masarhub.com">info@masarhub.com</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic">📍</div>
+            <div>
+              <h4>المقر الرئيسي</h4>
+              <p>المملكة العربية السعودية</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form onsubmit="handleSubmit(event)">
+          <div class="success-message" id="successMsg">
+            <i class="fas fa-check-circle"></i> تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="name"><i class="fas fa-user"></i> الاسم الكامل</label>
+              <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+            </div>
+            <div class="field">
+              <label for="email"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="phone"><i class="fas fa-mobile-alt"></i> رقم الجوال</label>
+              <input type="tel" id="phone" name="phone" placeholder="رقم جوالك" required>
+            </div>
+            <div class="field">
+              <label for="subject"><i class="fas fa-tag"></i> الموضوع</label>
+              <select id="subject" name="subject" required>
+                <option value="">اختر الموضوع</option>
+                <option value="شراكة">شراكة جديدة</option>
+                <option value="استشارة">استشارة مجانية</option>
+                <option value="سؤال">لدي سؤال</option>
+                <option value="أخرى">أخرى</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message"><i class="fas fa-comment"></i> الرسالة</label>
+            <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-maroon">
+            <i class="fas fa-paper-plane"></i> إرسال الرسالة
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-logo">
+            <svg width="50" height="54" viewBox="0 0 50 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" fill="#FFFFFF" opacity="0.3"/>
+              <path d="M25 5 L30 18 L45 18 L33 26 L38 39 L25 31 L12 39 L17 26 L5 18 L20 18 Z" fill="#E8B4A6"/>
+            </svg>
+          </div>
+          <p>شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية بفريق متخصص يفهم السوق السعودي.</p>
+        </div>
+        <div>
+          <h4>الروابط السريعة</h4>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+            <li><a href="#about"><i class="fas fa-chevron-left"></i> أهدافنا</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-left"></i> تواصل معنا</a></li>
           </ul>
         </div>
-
-        <div id="mission" class="tab-panel">
-          <h3>رسالتنا</h3>
-          <p>تمكين رواد الأعمال والمتاجر الإلكترونية من خلال تقديم خدمات احترافية متكاملة تشمل التأسيس والتسويق والتطوير والإدارة بكفاءة عالية وبأسعار تنافسية.</p>
-          <ul class="pill-list">
-            <li>تمكين الرواد</li>
-            <li>خدمات شاملة</li>
-            <li>كفاءة عالية</li>
-            <li>أسعار منافسة</li>
-          </ul>
-        </div>
-
-        <div id="values" class="tab-panel">
-          <h3>قيمنا الأساسية</h3>
-          <p>نؤمن بقيم العمل الجماعي والمسؤولية والابتكار والشفافية، ونعمل بجد لبناء علاقات قوية مع عملائنا بناءً على الثقة والمصداقية.</p>
-          <ul class="pill-list">
-            <li>العمل الجماعي</li>
-            <li>المسؤولية</li>
-            <li>الابتكار</li>
-            <li>الشفافية</li>
-            <li>الثقة</li>
+        <div>
+          <h4>تابعنا على</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i> فيسبوك</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> تويتر</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> إنستاجرام</a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i> لينكد إن</a></li>
           </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" style="justify-content:center">خدماتنا</span>
-      <h2>حلول متكاملة لمتجرك الإلكتروني</h2>
-    </div>
-    <div class="services-grid">
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%231B5A45' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🏪%3C/text%3E%3C/svg%3E" alt="تأسيس المتجر">
-        </div>
-        <div class="body">
-          <h3>تأسيس متجرك الإلكتروني</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>إنشاء متجر إلكتروني احترافي من الصفر مع كل الأدوات والميزات التي تحتاجها للبيع بفعالية.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>تصميم متجر احترافي، نظام دفع آمن، إدارة المنتجات، نظام فواتير ذكي.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
-      </div>
-
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%235A1126' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📈%3C/text%3E%3C/svg%3E" alt="التسويق الرقمي">
-        </div>
-        <div class="body">
-          <h3>التسويق الرقمي والسيو</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>استراتيجيات تسويق شاملة لزيادة مبيعاتك وتحسين ظهورك في محركات البحث.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>تحسين محركات البحث SEO، إعلانات جوجل وفيسبوك، تسويق المحتوى، إدارة السوشيال ميديا.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
-      </div>
-
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%230F3D2E' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🛠️%3C/text%3E%3C/svg%3E" alt="التطوير والصيانة">
-        </div>
-        <div class="body">
-          <h3>التطوير والصيانة المستمرة</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>تطوير مستمر وتحديثات دورية لمتجرك مع الحفاظ على الأداء الأمثل والأمان العالي.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>تطوير ميزات جديدة، إصلاح الأعطال، تحسين الأداء، نسخ احتياطية دورية، دعم فني 24/7.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
-      </div>
-
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%231B5A45' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📊%3C/text%3E%3C/svg%3E" alt="التحليل والإحصائيات">
-        </div>
-        <div class="body">
-          <h3>التحليل والإحصائيات</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>تحليل شامل لأداء متجرك مع تقارير تفصيلية وتوصيات لتحسين المبيعات.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>تقارير شهرية مفصلة، تحليل سلوك العملاء، تتبع المبيعات، اقتراحات التحسين المستمر.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
-      </div>
-
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%235A1126' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🤝%3C/text%3E%3C/svg%3E" alt="استشارات الأعمال">
-        </div>
-        <div class="body">
-          <h3>استشارات الأعمال</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>استشارات متخصصة لتطوير استراتيجيتك التجارية وزيادة ربحيتك في التجارة الإلكترونية.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>دراسة السوق، تحديد الفرص، استراتيجيات النمو، تطوير خطة تسويق شاملة، متابعة الأداء.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
-      </div>
-
-      <div class="scard">
-        <div class="thumb">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%230F3D2E' width='400' height='250'/%3E%3Ctext x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle'%3E💬%3C/text%3E%3C/svg%3E" alt="دعم العملاء">
-        </div>
-        <div class="body">
-          <h3>دعم العملاء المتخصص</h3>
-          <div class="blk">
-            <b>الخدمة</b>
-            <p>فريق دعم متخصص وسريع الاستجابة لحل مشاكلك وأسئلتك بكفاءة واحترافية.</p>
-          </div>
-          <div class="blk">
-            <b>ما تحصل عليه</b>
-            <p>دعم 24/7 عبر واتساب والبريد، وقت استجابة سريع، حل فوري للمشاكل الفنية والإدارية.</p>
-          </div>
-          <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-        </div>
+      <div class="bottom-bar">
+        <span><i class="fas fa-copyright"></i> 2024 مسار هب. جميع الحقوق محفوظة.</span>
+        <span>•</span>
+        <div class="credit-text">تصميم وبرمجة: <a href="https://github.com/ahmadabdaljalil341-ai" target="_blank">أحمد عبد الجليل</a></div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="cta-band" style="margin:80px 28px; width:auto;">
-  <h2>هل أنت مستعد لبدء رحلتك نحو النجاح التجاري؟</h2>
-  <p>تواصل معنا اليوم واحصل على استشارة مجانية من خبرائنا المتخصصين</p>
-  <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">احجز استشارتك المجانية</a>
-</section>
+  <script>
+    // Tab functionality
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-panel");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
 
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" style="justify-content:center">تواصل معنا</span>
-      <h2>ابقَ على اتصال دائم</h2>
-    </div>
-    <div class="contact-grid">
-      <div>
-        <div class="info-card">
-          <div class="ic">📞</div>
-          <div>
-            <h4>رقم الجوال</h4>
-            <p><a href="tel:+966536065553">+966 53 606 5553</a></p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="ic">💬</div>
-          <div>
-            <h4>واتساب</h4>
-            <p><a href="https://wa.me/966536065553" target="_blank">تواصل معنا عبر واتساب</a></p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="ic">📧</div>
-          <div>
-            <h4>البريد الإلكتروني</h4>
-            <p><a href="mailto:info@masarhub.com">info@masarhub.com</a></p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="ic">📍</div>
-          <div>
-            <h4>المقر الرئيسي</h4>
-            <p>المملكة العربية السعودية</p>
-          </div>
-        </div>
-      </div>
-      <form onsubmit="handleSubmit(event)">
-        <div class="field-row">
-          <div class="field">
-            <label for="name">الاسم الكامل</label>
-            <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
-          </div>
-          <div class="field">
-            <label for="email">البريد الإلكتروني</label>
-            <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="phone">رقم الجوال</label>
-            <input type="tel" id="phone" name="phone" placeholder="رقم جوالك" required>
-          </div>
-          <div class="field">
-            <label for="subject">الموضوع</label>
-            <select id="subject" name="subject" required>
-              <option value="">اختر الموضوع</option>
-              <option value="شراكة">شراكة جديدة</option>
-              <option value="استشارة">استشارة مجانية</option>
-              <option value="سؤال">لدي سؤال</option>
-              <option value="أخرى">أخرى</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="message">الرسالة</label>
-          <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-maroon">إرسال الرسالة</button>
-      </form>
-    </div>
-  </div>
-</section>
+    // Form submission with WhatsApp
+    function handleSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      const wa_message = `مرحباً مسار هب 👋\n\nالاسم: ${name}\nالبريد: ${email}\nالجوال: ${phone}\nالموضوع: ${subject}\nالرسالة: ${message}`;
+      
+      // Show success message
+      document.getElementById('successMsg').style.display = 'block';
+      
+      // Reset form
+      event.target.reset();
+      
+      // Open WhatsApp in new tab
+      setTimeout(() => {
+        window.open(`https://wa.me/966536065553?text=${encodeURIComponent(wa_message)}`, '_blank');
+      }, 500);
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4CAYAAADsEGyPAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nOzdvXUcV5qA4as9tNoRzfWWiIB02xIYwVYGxGagDLQbwT" alt="مسار هب"></div>
-        <p>شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية بفريق متخصص يفهم السوق السعودي.</p>
-      </div>
-      <div>
-        <h4>الروابط السريعة</h4>
-        <ul>
-          <li><a href="#home">الرئيسية</a></li>
-          <li><a href="#about">أهدافنا</a></li>
-          <li><a href="#services">الخدمات</a></li>
-          <li><a href="#contact">تواصل معنا</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>تابعنا</h4>
-        <ul>
-          <li><a href="#">فيسبوك</a></li>
-          <li><a href="#">تويتر</a></li>
-          <li><a href="#">إنستاجرام</a></li>
-          <li><a href="#">لينكد إن</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="bottom-bar">
-      <span>© 2024 مسار هب. جميع الحقوق محفوظة.</span>
-      <span>•</span>
-      <div class="credit-text">تصميم وبرمجة: <a href="#">أحمد عبد الجليل</a></div>
-    </div>
-  </div>
-</footer>
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        document.getElementById('successMsg').style.display = 'none';
+      }, 3000);
+    }
 
-<script>
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-panel");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-  tablinks = document.getElementsByClassName("tab-btn");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-}
+    // Language toggle placeholder
+    document.getElementById('langToggle').addEventListener('click', function() {
+      alert('خاصية تغيير اللغة قريباً - Language switching coming soon');
+    });
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const message = document.getElementById('message').value;
-  const wa_message = `مرحبا، أنا ${name}، أود التواصل معكم. رقمي: ${phone}. الرسالة: ${message}`;
-  window.open(`https://wa.me/966536065553?text=${encodeURIComponent(wa_message)}`, '_blank');
-}
-
-document.getElementById('langToggle').addEventListener('click', function() {
-  alert('خاصية تغيير اللغة قريباً');
-});
-</script>
+    // Smooth scroll for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
+
 </html>
