@@ -620,16 +620,31 @@
       flex-direction: column;
       align-items: center;
       gap: 18px;
+      backdrop-filter: blur(8px);
+      background-clip: padding-box;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .cta-band h2 {
       font-size: clamp(22px, 2.6vw, 30px);
       max-width: 600px;
+      color: #ffffff;
     }
 
     .cta-band p {
       color: #EADFE0;
       max-width: 520px;
+    }
+
+    .cta-band .btn-maroon {
+      color: #ffffff;
+      background: rgba(90, 17, 38, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-band .btn-maroon:hover {
+      background: rgba(90, 17, 38, 1);
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
     /* ===== CONTACT ===== */
@@ -998,746 +1013,326 @@
         color: var(--ink);
         padding: 9px 10px;
         border-radius: 10px;
-        transition: background .2s;
+        transition: .2s;
       }
 
       .mobile-menu a:hover {
-        background: rgba(15, 61, 46, 0.08);
+        background: rgba(15, 61, 46, .1);
       }
 
-      .mobile-menu .btn {
+      .mobile-menu-cta {
         margin-top: 6px;
-        justify-content: center;
-        font-size: 13px;
-        padding: 10px 12px;
       }
+    }
 
-      .logo svg,
-      .logo img {
-        height: 56px;
-      }
-
-      .btn {
-        padding: 11px 18px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 60px 0 40px;
-      }
-
-      .hero-grid {
-        gap: 30px;
-      }
-
-      .hero h1 {
-        font-size: clamp(24px, 3.5vw, 32px);
-      }
-
-      .hero p {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .hero-ctas {
-        gap: 8px;
-        flex-direction: column;
-      }
-
-      .hero-ctas a {
-        width: 100%;
-      }
-
-      .stats-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 2px;
-        margin-top: 30px;
-      }
-
-      .stat {
-        padding: 16px 10px;
-      }
-
-      .stat b {
-        font-size: 20px;
-      }
-
-      .stat span {
-        font-size: 11px;
-      }
-
-      section {
-        padding: 40px 0;
-      }
-
-      .section-head {
-        margin: 0 auto 30px;
-      }
-
-      .section-head h2 {
-        font-size: clamp(20px, 2.5vw, 26px);
-      }
-
-      .about-grid {
-        gap: 30px;
-      }
-
-      .tabs {
-        gap: 6px;
-        margin-bottom: 18px;
-      }
-
-      .tab-btn {
-        font-size: 13px;
-        padding: 10px 4px;
-      }
-
-      .tab-panel h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
-      }
-
-      .tab-panel p {
-        font-size: 13px;
-        margin-bottom: 14px;
-      }
-
-      .pill-list {
-        gap: 6px;
-      }
-
-      .pill-list li {
-        padding: 7px 14px;
-        font-size: 12px;
-      }
-
-      .vision-strip {
-        gap: 12px;
-        margin-top: 40px;
-      }
-
-      .vision-strip figcaption {
-        padding: 10px 12px;
-        font-size: 12px;
-      }
-
-      .services-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 14px;
-        padding: 4px 4px 10px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-
-      .services-grid::-webkit-scrollbar {
-        display: none;
-      }
-
-      .services-grid .scard {
-        flex: 0 0 80%;
-        scroll-snap-align: center;
-      }
-
-      .slider-arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 38%;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: rgba(15, 61, 46, 0.85);
-        color: #fff;
-        border: none;
-        z-index: 5;
-        font-size: 12px;
-        cursor: pointer;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
-      }
-
-      .slider-arrow.prev {
-        right: -4px;
-      }
-
-      .slider-arrow.next {
-        left: -4px;
-      }
-
-      .scard .body {
-        padding: 16px 14px;
-        gap: 12px;
-      }
-
-      .scard h3 {
-        font-size: 16px;
-      }
-
-      .scard .blk {
-        font-size: 13px;
-      }
-
-      .scard .blk b {
-        font-size: 11.5px;
-      }
-
-      .scard .cta {
-        font-size: 13px;
-        padding-top: 8px;
-      }
-
-      .cta-band {
-        padding: 36px 20px;
-        gap: 14px;
-      }
-
-      .cta-band h2 {
-        font-size: clamp(18px, 2.2vw, 24px);
-      }
-
-      .cta-band p {
-        font-size: 14px;
-      }
-
-      .contact-grid {
-        gap: 30px;
-      }
-
-      .info-card {
-        padding: 16px 18px;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .info-card .ic {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-      }
-
-      .info-card h4 {
-        font-size: 14px;
-      }
-
-      .info-card p {
-        font-size: 13px;
-      }
-
-      form {
-        padding: 20px;
-      }
-
-      .field {
-        margin-bottom: 14px;
-      }
-
-      .field label {
-        font-size: 12px;
-        margin-bottom: 5px;
-      }
-
-      .field input,
-      .field select,
-      .field textarea {
-        padding: 11px 12px;
-        font-size: 13px;
-      }
-
-      .field textarea {
-        min-height: 80px;
-      }
-
-      .field-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      form .btn {
-        padding: 13px;
-      }
-
-      footer {
-        padding: 40px 0 18px;
-      }
-
-      .foot-grid {
-        gap: 30px;
-        padding-bottom: 30px;
-      }
-
-      .foot-logo img {
-        height: 48px;
-      }
-
-      .foot-grid h4 {
-        font-size: 15px;
-        margin-bottom: 14px;
-      }
-
-      .foot-grid p {
-        font-size: 13px;
-      }
-
-      .foot-grid li {
-        margin-bottom: 8px;
-        font-size: 13px;
-      }
-
-      .bottom-bar {
-        flex-direction: column;
-        justify-content: center;
-        gap: 8px;
-        padding-top: 18px;
-        font-size: 12px;
-      }
-
-      .credit-text {
-        padding-top: 12px;
-        border-top: 1px solid rgba(255, 255, 255, .10);
-        font-size: 11px;
-      }
+    .mobile-menu-btn:hover {
+      color: var(--maroon);
     }
   </style>
 </head>
-
 <body>
 
   <!-- ===== HEADER ===== -->
   <header>
-    <div class="nav wrap">
-      <a class="logo" href="#home">
-        <img src="https://i.postimg.cc/XqrzgwZ3/LOGO.png" alt="مسار هب">
-      </a>
-      <nav class="nav-links">
-        <a href="#home">من نحن</a>
+    <nav class="nav">
+      <div class="logo">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="8" fill="#0F3D2E"/>
+          <text x="24" y="32" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial">م</text>
+        </svg>
+      </div>
+      <div class="nav-links">
+        <a href="#about">من نحن</a>
         <a href="#vision">رؤيتنا</a>
-        <a href="#about">أهدافنا</a>
         <a href="#services">خدماتنا</a>
         <a href="#contact">تواصل معنا</a>
-      </nav>
-      <a class="btn btn-maroon nav-cta-desktop" href="https://wa.me/966536065553" target="_blank">
-        <i class="fab fa-whatsapp"></i> احجز استشارتك
-      </a>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+      </div>
+      <div class="nav-cta-desktop">
+        <button class="btn btn-maroon">احجز استشارتك</button>
+      </div>
+      <button class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">من نحن</a>
+    </nav>
+    <div class="mobile-menu">
+      <a href="#about">من نحن</a>
       <a href="#vision">رؤيتنا</a>
-      <a href="#about">أهدافنا</a>
       <a href="#services">خدماتنا</a>
       <a href="#contact">تواصل معنا</a>
-      <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">
-        <i class="fab fa-whatsapp"></i> احجز استشارتك
-      </a>
+      <button class="btn btn-maroon mobile-menu-cta">احجز استشارتك</button>
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow" style="color:#E8B4A6; justify-content:flex-start">
-          <span style="width:24px;height:2px;background:#E8B4A6;display:inline-block;margin-left:8px;"></span>
-          شريك استراتيجي سعودي
-        </span>
-        <h1>نحول حلمك <span>لواقع ملموس</span> من فكرة إلى أرباح مستدامة</h1>
-        <p>مسار هب شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية، بفريق يفهم السوق السعودي ويساعدك على تحقيق أحلامك التجارية بنجاح.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-maroon" href="#services">
-            <i class="fas fa-arrow-left"></i> اعرف خدماتنا
-          </a>
-          <a class="btn btn-ghost-light" href="https://wa.me/966536065553" target="_blank">
-            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-          </a>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">خدمات متكاملة</span>
+          <h1>شريكك في <span>نمو متجرك</span> الإلكتروني</h1>
+          <p>نوفر حلولاً استراتيجية شاملة لتطوير وإدارة متاجرك الإلكترونية بكفاءة واحترافية عالية.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-maroon">ابدأ الآن</button>
+            <button class="btn btn-ghost-light">تعرف أكثر</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="متجر إلكتروني">
         </div>
       </div>
-      <div class="hero-art">
-        <img src="https://i.postimg.cc/HxwxkyWY/mn-nhn-copy.jpg" alt="من نحن - مسار هب">
-      </div>
-    </div>
 
-    <!-- Stats Row -->
-    <div class="wrap">
       <div class="stats-row">
         <div class="stat">
-          <b>+30</b>
-          <span>متجراً تم إطلاقه</span>
+          <b>500+</b>
+          <span>عميل سعيد</span>
         </div>
         <div class="stat">
-          <b>70%</b>
-          <span>متوسط رفع التحويل</span>
+          <b>1000+</b>
+          <span>منتج مُدار</span>
         </div>
         <div class="stat">
-          <b>8</b>
-          <span>خدمات متكاملة</span>
+          <b>50M+</b>
+          <span>إجمالي المبيعات</span>
         </div>
         <div class="stat">
-          <b>2030</b>
-          <span>رؤية نسعى لها</span>
+          <b>8+</b>
+          <span>سنوات خبرة</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== VISION SECTION ===== -->
-  <section id="vision">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="justify-content:center">رؤيتنا</span>
-        <h2>رؤيتنا الطموحة</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-art">
-          <img src="https://i.postimg.cc/zBCBGgDG/rw-ytna-copy.jpg" alt="رؤيتنا - مسار هب">
-        </div>
-        <div>
-          <h3 style="font-size:21px; margin-bottom:10px;">أن نصبح الشريك الأول والأكثر موثوقية</h3>
-          <p style="color:#3D4A43; margin-bottom:18px;">أن نصبح الشريك الأول والأكثر موثوقية للعاملين في مجال التجارة الإلكترونية في السوق السعودي والعربي، مع التركيز على الابتكار والجودة والنمو المستدام.</p>
-          <ul class="pill-list">
-            <li><i class="fas fa-check-circle"></i> نمو مستدام</li>
-            <li><i class="fas fa-lightbulb"></i> ابتكار مستمر</li>
-            <li><i class="fas fa-handshake"></i> شفافية كاملة</li>
-            <li><i class="fas fa-star"></i> جودة عالية</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT / GOALS SECTION ===== -->
+  <!-- ===== ABOUT / TABS ===== -->
   <section id="about">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="justify-content:center">أهدافنا</span>
-        <h2>أهدافنا واستراتيجيتنا</h2>
+        <span class="eyebrow">من نحن</span>
+        <h2>رؤيتنا وأهدافنا</h2>
       </div>
+
+      <div class="section-banner">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000" alt="صورة الفريق">
+      </div>
+
       <div class="about-grid">
         <div class="about-art">
-          <img src="https://i.postimg.cc/zBCBGgDD/hdfna-copy.jpg" alt="أهدافنا - مسار هب">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="عن الشركة">
         </div>
         <div>
           <div class="tabs">
-            <button class="tab-btn active" onclick="openTab(event, 'mission')">
-              <i class="fas fa-target"></i> الرسالة
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'values')">
-              <i class="fas fa-heart"></i> القيم
-            </button>
+            <button class="tab-btn active" data-tab="0">عننا</button>
+            <button class="tab-btn" data-tab="1">مهمتنا</button>
+            <button class="tab-btn" data-tab="2">قيمنا</button>
           </div>
 
-          <div id="mission" class="tab-panel active">
-            <h3>رسالتنا</h3>
-            <p>تمكين رواد الأعمال والمتاجر الإلكترونية من خلال تقديم خدمات احترافية متكاملة تشمل التأسيس والتسويق والتطوير والإدارة، بكفاءة عالية وأسعار منافسة.</p>
+          <div class="tab-panel active" id="tab-0">
+            <h3>من نحن</h3>
+            <p>نحن شركة رائدة في مجال التجارة الإلكترونية، متخصصون في تطوير وإدارة المتاجر الإلكترونية بمستويات عالية من الاحترافية والكفاءة. نعمل مع أكبر العلامات التجارية والشركات الناشئة لتحقيق أهدافهم التجارية.</p>
             <ul class="pill-list">
-              <li><i class="fas fa-rocket"></i> تمكين الرواد</li>
-              <li><i class="fas fa-briefcase"></i> خدمات شاملة</li>
-              <li><i class="fas fa-cogs"></i> كفاءة عالية</li>
-              <li><i class="fas fa-tag"></i> أسعار منافسة</li>
+              <li><i class="fas fa-check"></i> الاستراتيجية</li>
+              <li><i class="fas fa-check"></i> الابتكار</li>
+              <li><i class="fas fa-check"></i> الموثوقية</li>
             </ul>
           </div>
 
-          <div id="values" class="tab-panel">
-            <h3>قيمنا الأساسية</h3>
-            <p>نؤمن بقيم العمل الجماعي والمسؤولية والابتكار والشفافية، ونعمل بجد لبناء علاقات قوية مع عملائنا بناءً على الثقة والاحترام المتبادل.</p>
+          <div class="tab-panel" id="tab-1">
+            <h3>مهمتنا</h3>
+            <p>مهمتنا هي تمكين الشركات من تحقيق أقصى إمكانيات متاجرهم الإلكترونية من خلال استراتيجيات مبتكرة وحلول تقنية متقدمة، مما يسهم في نموهم المستدام والربحية العالية.</p>
             <ul class="pill-list">
-              <li><i class="fas fa-users"></i> العمل الجماعي</li>
-              <li><i class="fas fa-shield-alt"></i> المسؤولية</li>
-              <li><i class="fas fa-brain"></i> الابتكار</li>
-              <li><i class="fas fa-book-open"></i> الشفافية</li>
-              <li><i class="fas fa-medal"></i> الثقة</li>
+              <li><i class="fas fa-check"></i> النمو المستدام</li>
+              <li><i class="fas fa-check"></i> الحلول المتقدمة</li>
+              <li><i class="fas fa-check"></i> الربحية</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-2">
+            <h3>قيمنا</h3>
+            <p>نؤمن بأهمية النزاهة والشفافية والابتكار المستمر في كل ما نقوم به. نقدر عملائنا ونسعى لتقديم خدمات متميزة تتجاوز توقعاتهم وتساهم في نجاحهم طويل الأجل.</p>
+            <ul class="pill-list">
+              <li><i class="fas fa-check"></i> النزاهة</li>
+              <li><i class="fas fa-check"></i> الشفافية</li>
+              <li><i class="fas fa-check"></i> الابتكار</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- ===== SERVICES SECTION ===== -->
-  <section id="services" class="services">
+
+  <!-- ===== VISION ===== -->
+  <section id="vision" style="background: #f5f5f5;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="justify-content:center">خدماتنا</span>
-        <h2>حلول متكاملة لمتجرك الإلكتروني</h2>
-              </div>
-
-        <div class="section-banner">
-          <img src="https://i.postimg.cc/50B02C9d/khdmatna-copy.jpg" alt="خدماتنا - مسار هب">
-        </div>
+        <span class="eyebrow">أهدافنا</span>
+        <h2>تطوير وإدارة المتاجر الرقمية السعودية</h2>
       </div>
-      <div class="services-slider-wrap">
-        <button class="slider-arrow prev" type="button" onclick="scrollServices(1)" aria-label="السابق">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-        <div class="services-grid" id="servicesGrid">
-        <!-- Service Card 1 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/8CQYDJ7T/tsmym-mtajr-copy.jpg" alt="تصميم متاجر">
-          </div>
-          <div class="body">
-            <h3>تأسيس متجرك الإلكتروني</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>إنشاء متجر إلكتروني احترافي من الصفر مع كل الأدوات والميزات التي تحتاجها للبيع بفعالية.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>تصميم متجر احترافي، نظام دفع آمن، إدارة المنتجات، نظام فواتير ذكي.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
 
-        <!-- Service Card 2 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/Y97TNG7y/thsyn-mhrkat-albhth-lrfʿ-zhwr-mwqʿk-wzyadt-wswlk-llʿmlaʾ-copy.jpg" alt="تحسين محركات البحث">
-          </div>
-          <div class="body">
-            <h3>التسويق الرقمي والسيو</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>استراتيجيات تسويق شاملة لزيادة مبيعاتك وتحسين ظهورك في محركات البحث.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>تحسين محركات البحث SEO، إعلانات جوجل وفيسبوك، تسويق المحتوى، إدارة السوشيال ميديا.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 3 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/gJvmmbcG/a-nshaʾ-mwaqʿ-a-lktrwnyt-ahtrafyt-copy.jpg" alt="إنشاء المواقع الإلكترونية">
-          </div>
-          <div class="body">
-            <h3>التطوير والصيانة المستمرة</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>تطوير مستمر وتحديثات دورية لمتجرك مع الحفاظ على الأداء الأمثل والأمان العالي.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>تطوير ميزات جديدة، إصلاح الأعطال، تحسين الأداء، نسخ احتياطية دورية، دعم فني 24/7.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 4 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/WzH9yhR4/drast-wakhtbar-almntjat-ldman-njahha-fy-alswq-copy.jpg" alt="دراسة واختبار المنتجات">
-          </div>
-          <div class="body">
-            <h3>التحليل والإحصائيات</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>تحليل شامل لأداء متجرك مع تقارير تفصيلية وتوصيات لتحسين المبيعات.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>تقارير شهرية مفصلة، تحليل سلوك العملاء، تتبع المبيعات، اقتراحات التحسين المستمر.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 5 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/pLpvyFVS/astsharat-wttwyr-ala-ʿmal-lbnaʾ-astratyjyat-nmw-a-kthr-njah-a-copy.jpg" alt="استشارات وتطوير الأعمال">
-          </div>
-          <div class="body">
-            <h3>استشارات الأعمال</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>استشارات متخصصة لتطوير استراتيجيتك التجارية وزيادة ربحيتك في التجارة الإلكترونية.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>دراسة السوق، تحديد الفرص، استراتيجيات النمو، تطوير خطة تسويق شاملة، متابعة الأداء.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 6 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/8PTPkcrY/a-dart-alhmlat-ala-ʿlanyt-almmwlt-lthqyq-wswl-a-kbr-wntay-j-a-qwy-copy.jpg" alt="إدارة الحملات الإعلانية">
-          </div>
-          <div class="body">
-            <h3>إدارة الحملات الإعلانية</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>إدارة احترافية للحملات الإعلانية الممولة عبر جوجل وفيسبوك وإنستجرام لتحقيق أقصى عائد على الإنفاق.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>استهداف دقيق للجمهور، تحسين مستمر للحملات، تقارير أداء دورية، زيادة انتشار العلامة التجارية.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 7 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/3JrY5qPg/a-nshaʾ-wtjhyz-sfhat-altwasl-alajtmaʿy-bahtraf-ltʿzyz-hdwr-ʿlamtk-copy.jpg" alt="إنشاء وتجهيز صفحات التواصل الاجتماعي">
-          </div>
-          <div class="body">
-            <h3>إنشاء وتجهيز صفحات التواصل الاجتماعي</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>تصميم وإعداد صفحات احترافية على منصات التواصل الاجتماعي لتعزيز حضور علامتك التجارية.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>هوية بصرية متكاملة للصفحات، محتوى تعريفي احترافي، إعداد كامل للبيانات والروابط، جاهزية للنشر الفوري.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 8 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/sxjdzB0v/altswyq-ʿbr-mhtwy-UGC-lsnaʿt-thqt-a-kbr-wzyadt-tfaʿl-ʿmlay-k-copy.jpg" alt="التسويق عبر UGC">
-          </div>
-          <div class="body">
-            <h3>التسويق عبر محتوى UGC</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>صناعة محتوى تسويقي حقيقي من صناعة المستخدمين لبناء ثقة أكبر مع جمهورك المستهدف.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>محتوى أصيل وموثوق، زيادة معدل التفاعل والمصداقية، تعزيز قرار الشراء لدى العملاء المحتملين.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-
-        <!-- Service Card 9 -->
-        <div class="scard">
-          <div class="thumb">
-            <img src="https://i.postimg.cc/KjqVy0Tm/tsmym-jrafyk-wbnaʾ-hwyt-bsryt-tʿks-qwt-ʿlamtk-copy.jpg" alt="تصميم جرافيك وبناء الهوية">
-          </div>
-          <div class="body">
-            <h3>تصميم جرافيك وبناء الهوية</h3>
-            <div class="blk">
-              <b>الخدمة</b>
-              <p>تصميم هوية بصرية متكاملة تعكس قوة علامتك التجارية وتميزها عن المنافسين.</p>
-            </div>
-            <div class="blk">
-              <b>ما تحصل عليه</b>
-              <p>شعار احترافي، دليل هوية بصرية كامل، تصاميم تسويقية جاهزة، توحيد الشكل عبر جميع المنصات.</p>
-            </div>
-            <a class="cta" href="https://wa.me/966536065553" target="_blank">تفاصيل أكثر</a>
-          </div>
-        </div>
-        </div>
-        <button class="slider-arrow next" type="button" onclick="scrollServices(-1)" aria-label="التالي">
-          <i class="fas fa-chevron-left"></i>
-        </button>
+      <div class="vision-strip">
+        <figure>
+          <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="150" fill="#0F3D2E"/>
+            <text x="100" y="75" font-size="40" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial">📈</text>
+          </svg>
+          <figcaption>نمو الأعمال</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="150" fill="#5A1126"/>
+            <text x="100" y="75" font-size="40" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial">🛡️</text>
+          </svg>
+          <figcaption>الأمان والموثوقية</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="150" fill="#1B5A45"/>
+            <text x="100" y="75" font-size="40" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial">🎯</text>
+          </svg>
+          <figcaption>التميز والجودة</figcaption>
+        </figure>
       </div>
     </div>
   </section>
-  <section style="display: flex; align-items: center; justify-content: center; padding: 80px 28px;">
-    <div class="wrap" style="width: 100%;">
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">خدماتنا</span>
+        <h2>حلول تجارة إلكترونية متكاملة</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="body">
+            <h3>بناء المتجر</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>تصميم وبناء متجر إلكتروني احترافي يعكس هويتك التجارية</p>
+            </div>
+            <a href="#" class="cta">اعرف أكثر</a>
+          </div>
+        </div>
+
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="body">
+            <h3>تحسين الأداء</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>تحسين محركات البحث وزيادة الزيارات والمبيعات</p>
+            </div>
+            <a href="#" class="cta">اعرف أكثر</a>
+          </div>
+        </div>
+
+        <div class="scard">
+          <div class="thumb">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="body">
+            <h3>الدعم الفني</h3>
+            <div class="blk">
+              <b>الخدمة</b>
+              <p>دعم فني 24/7 والمساعدة في إدارة متجرك</p>
+            </div>
+            <a href="#" class="cta">اعرف أكثر</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND ===== -->
+  <section>
+    <div class="wrap">
       <div class="cta-band">
-        <h2>هل أنت مستعد لبدء رحلتك نحو النجاح التجاري؟</h2>
-        <p>تواصل معنا اليوم واحصل على استشارة مجانية من خبرائنا المتخصصين</p>
-        <a class="btn btn-maroon" href="https://wa.me/966536065553" target="_blank">
-          <i class="fab fa-whatsapp"></i> احجز استشارتك المجانية
-        </a>
+        <h2>هل أنت مستعد لتطوير متجرك؟</h2>
+        <p>دعنا نساعدك في بناء وتطوير متجر إلكتروني ناجح يحقق أهدافك التجارية</p>
+        <button class="btn btn-maroon">احجز استشارتك</button>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact">
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" style="background: #f5f5f5;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow" style="justify-content:center">تواصل معنا</span>
-        <h2>ابقَ على اتصال دائم</h2>
+        <span class="eyebrow">تواصل معنا</span>
+        <h2>نحن هنا لمساعدتك</h2>
       </div>
+
       <div class="contact-grid">
         <div>
           <div class="info-card">
-            <div class="ic">📞</div>
+            <div class="ic">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
             <div>
-              <h4>رقم الجوال</h4>
-              <p><a href="tel:+966536065553">+966 53 606 5553</a></p>
+              <h4>العنوان</h4>
+              <p>الرياض، المملكة العربية السعودية</p>
             </div>
           </div>
           <div class="info-card">
-            <div class="ic">💬</div>
+            <div class="ic">
+              <i class="fas fa-phone"></i>
+            </div>
             <div>
-              <h4>واتساب</h4>
-              <p><a href="https://wa.me/966536065553" target="_blank">تواصل معنا عبر واتساب</a></p>
+              <h4>الهاتف</h4>
+              <p><a href="tel:+966501234567">+966 50 123 4567</a></p>
             </div>
           </div>
           <div class="info-card">
-            <div class="ic">📧</div>
+            <div class="ic">
+              <i class="fas fa-envelope"></i>
+            </div>
             <div>
               <h4>البريد الإلكتروني</h4>
-              <p><a href="mailto:info@masarhub.com">info@masarhub.com</a></p>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="ic">📍</div>
-            <div>
-              <h4>المقر الرئيسي</h4>
-              <p>المملكة العربية السعودية</p>
+              <p><a href="mailto:info@masarhup.com">info@masarhup.com</a></p>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form -->
         <form onsubmit="handleSubmit(event)">
-          <div class="success-message" id="successMsg">
-            <i class="fas fa-check-circle"></i> تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
-          </div>
+          <div class="success-message" id="successMsg">شكراً لتواصلك معنا! سيتم الرد عليك قريباً.</div>
+          
           <div class="field-row">
             <div class="field">
-              <label for="name"><i class="fas fa-user"></i> الاسم الكامل</label>
-              <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+              <label for="name">الاسم</label>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="field">
-              <label for="email"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
-              <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
+              <label for="email">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" required>
             </div>
           </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="phone"><i class="fas fa-mobile-alt"></i> رقم الجوال</label>
-              <input type="tel" id="phone" name="phone" placeholder="رقم جوالك" required>
-            </div>
-            <div class="field">
-              <label for="subject"><i class="fas fa-tag"></i> الموضوع</label>
-              <select id="subject" name="subject" required>
-                <option value="">اختر الموضوع</option>
-                <option value="شراكة">شراكة جديدة</option>
-                <option value="استشارة">استشارة مجانية</option>
-                <option value="سؤال">لدي سؤال</option>
-                <option value="أخرى">أخرى</option>
-              </select>
-            </div>
-          </div>
+
           <div class="field">
-            <label for="message"><i class="fas fa-comment"></i> الرسالة</label>
-            <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" name="phone" required>
           </div>
-          <button type="submit" class="btn btn-maroon">
-            <i class="fas fa-paper-plane"></i> إرسال الرسالة
-          </button>
+
+          <div class="field">
+            <label for="service">نوع الخدمة</label>
+            <select id="service" name="service" required>
+              <option>اختر نوع الخدمة</option>
+              <option>بناء متجر جديد</option>
+              <option>تحسين متجر موجود</option>
+              <option>استشارة تسويقية</option>
+              <option>دعم فني</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">الرسالة</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-maroon">إرسال الرسالة</button>
         </form>
       </div>
     </div>
@@ -1749,133 +1344,87 @@
       <div class="foot-grid">
         <div>
           <div class="foot-logo">
-            <img src="https://i.postimg.cc/XqrzgwZ3/LOGO.png" alt="مسار هب">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="8" fill="#ffffff"/>
+              <text x="24" y="32" font-size="20" font-weight="bold" text-anchor="middle" fill="#0F3D2E" font-family="Arial">م</text>
+            </svg>
           </div>
-          <p>شريك متكامل في تأسيس وتسويق وتطوير وإدارة المتاجر الإلكترونية بفريق متخصص يفهم السوق السعودي.</p>
+          <p>شريكك الموثوق في بناء وتطوير متاجرك الإلكترونية بكفاءة واحترافية عالية.</p>
         </div>
         <div>
           <h4>الروابط السريعة</h4>
           <ul>
-            <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
-            <li><a href="#vision"><i class="fas fa-chevron-left"></i> رؤيتنا</a></li>
-            <li><a href="#about"><i class="fas fa-chevron-left"></i> أهدافنا</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
-            <li><a href="#contact"><i class="fas fa-chevron-left"></i> تواصل معنا</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#vision">رؤيتنا</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
           </ul>
         </div>
         <div>
-          <h4>تابعنا على</h4>
+          <h4>تابعنا</h4>
           <ul>
             <li><a href="#"><i class="fab fa-facebook"></i> فيسبوك</a></li>
             <li><a href="#"><i class="fab fa-twitter"></i> تويتر</a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i> إنستاجرام</a></li>
             <li><a href="#"><i class="fab fa-linkedin"></i> لينكد إن</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> إنستجرام</a></li>
           </ul>
         </div>
       </div>
-      <div class="bottom-bar">
-        <span><i class="fas fa-copyright"></i> 2026 مسار هب. جميع الحقوق محفوظة.</span>
-        <span>•</span>
-        <div class="credit-text">تصميم وبرمجة: <a href="https://github.com/ahmadabdaljalil341-ai" target="_blank">أحمد عبد الجليل</a></div>
+      <div class="credit-text">
+        © 2024 مسار هب - جميع الحقوق محفوظة | صُنع بـ <a href="#">الحب والاحترافية</a>
       </div>
     </div>
   </footer>
 
   <script>
     // Tab functionality
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-panel");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-      }
-      tablinks = document.getElementsByClassName("tab-btn");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-
-    // Form submission with WhatsApp
-    function handleSubmit(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      const wa_message = `مرحباً مسار هب 👋\n\nالاسم: ${name}\nالبريد: ${email}\nالجوال: ${phone}\nالموضوع: ${subject}\nالرسالة: ${message}`;
-      
-      // Show success message
-      document.getElementById('successMsg').style.display = 'block';
-      
-      // Reset form
-      event.target.reset();
-      
-      // Open WhatsApp in new tab
-      setTimeout(() => {
-        window.open(`https://wa.me/966536065553?text=${encodeURIComponent(wa_message)}`, '_blank');
-      }, 500);
-
-      // Hide success message after 3 seconds
-      setTimeout(() => {
-        document.getElementById('successMsg').style.display = 'none';
-      }, 3000);
-    }
-
-    // Mobile hamburger menu
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('open');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-        });
-
-        document.addEventListener('click', function(e) {
-          if (!mobileMenu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
-            mobileMenu.classList.remove('open');
-          }
-        });
-      }
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabIndex = btn.getAttribute('data-tab');
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`tab-${tabIndex}`).classList.add('active');
+      });
     });
 
-    // Services mobile slider arrows
-    function scrollServices(direction) {
-      const grid = document.getElementById('servicesGrid');
-      if (!grid) return;
-      const card = grid.querySelector('.scard');
-      const amount = card ? card.getBoundingClientRect().width + 16 : 300;
-      grid.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('.mobile-menu a, .mobile-menu-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Form submission
+    function handleSubmit(event) {
+      event.preventDefault();
+      const successMsg = document.getElementById('successMsg');
+      successMsg.style.display = 'block';
+      event.target.reset();
+      
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
     }
 
-    // Smooth scroll for mobile
-    document.addEventListener('DOMContentLoaded', function() {
-      const links = document.querySelectorAll('a[href^="#"]');
-      links.forEach(link => {
-        link.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth' });
-            }
-          }
-        });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
   </script>
-
 </body>
-
 </html>
